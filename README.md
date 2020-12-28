@@ -5,22 +5,24 @@
 2. Download the pre-trained frozen graph [VGG model](https://drive.google.com/open?id=1yzcndbigENP3kQg6Oioerwvkf_hTotZZ)
 
 ## Configure CMake project
-* Make sure you have the compatible versions of Eigen, Protobuf, and Tensorflow (Mine: Eigen 3.3.4; Protobuf 2.6.1-1.3; Tensorflow 1.6)
-* You will also notice some hard-coded paths to include directories and libraries, modify them accordingly
+Clone this repository
+```
+git clone https://github.com/yx0123/monodepth-cpp.git
+```
+Edit the hard-coded paths to include directories and libraries
   * CMakeLists.txt (local built Eigen library)
-  * CMakeModules.cmake (path to '.so' file and 'include' directories; make sure your program source the library and header files)
+  * CMakeModules.cmake (path to '.so' file and 'include' directories; make sure your program source the library and header files) 
 
 
 ## Build (static/shared) library
 
 ```
+cd monodepth-cpp
 mkdir build && mkdir install
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=/path/to/monodepth-cpp/install ..
 make && make install
 ```
-
-You will be seeing 'include' and 'lib' folders in the 'install' folder, import them in your project
 
 To test if Monodepth C++ is working properly,
 ```
