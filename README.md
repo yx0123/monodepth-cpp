@@ -30,22 +30,6 @@ cd build
 ./inference_monodepth
 ```
 
-## Use (static/shared) library
-In your own CMakeLists.txt project, do the following:
-
-```
-set(monodepth_INCLUDE_DIRS /path/to/monodepth-cpp/install/include)
-INCLUDE_DIRECTORIES(
-  ...
-  monodepth_INCLUDE_DIRS
-  ...
-)
-
-TARGET_LINK_LIBRARIES(awesome_exe /path/to/tensorflow/library/libtensorflow_all.so) # Only if you are using the provided instructions
-TARGET_LINK_LIBRARIES(awesome_exe /path/to/monodepth-cpp/install/lib/libmonodepth_static.a) # if you are using static library
-
-```
-
 
 # Original README below:
 # monodepth-cpp
