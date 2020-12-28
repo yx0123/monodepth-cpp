@@ -39,20 +39,21 @@ To test if your Monodepth frozen graph is working properly
 
 int main()
 {
-  int image_width = 1241;
-  int image_height = 376;
-  monodepth::MonoDepth m(image_width, image_height, "/path/to/monodepth/model/model_city2kitti.pb");
+  int image_width = 256;
+  int image_height = 144;
+  monodepth::MonoDepth m(image_width, image_height, "/home/dh/monodepth-cpp/model/model_city2kitti_vgg.pb"); # modify path
   cv::Mat depth;
 
-  std::string img_path = "/path/to/image/folder/";
+  std::string img_path = "/home/dh/Documents/AirSim/Recordings/"; # modify path
 
-  int number_of_images = 1000;
+  int number_of_images = 210;
 
-  for (int i=0; i<number_of_images; i++)
+  for (int i=1; i<number_of_images+1; i++)
   {
-    char index_buf[7]; sprintf(index_buf, "%06d", i); std::string index_s(index_buf);
+    char index_buf[5]; sprintf(index_buf, "%04d", i); std::string index_s(index_buf);
     cv::Mat image(cv::imread(img_path + index_s + ".png"));
-    // std::cout << "read image in test monodepth" << std::endl;
+    //std::cout << "read image in test monodepth" << std::endl;
+    
     assert(!image.empty());
 
     m.inference(image, depth);
