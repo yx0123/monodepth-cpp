@@ -2,8 +2,7 @@
 
 ## Requirements
 1. You are required to build Tensorflow library from source, [see here](https://github.com/yx0123/monodepth-cpp/tree/master/Tensorflow_build_instructions)
-2. [Freeze the Tensorflow graph](https://github.com/yx0123/monodepth-cpp/tree/master/freeze_graph) (with known input and output names)
-
+2. Download the pre-trained frozen graph [VGG model](https://drive.google.com/open?id=1yzcndbigENP3kQg6Oioerwvkf_hTotZZ)
 
 ## Configure CMake project
 * Make sure you have the compatible versions of Eigen, Protobuf, and Tensorflow (Mine: Eigen 3.3.4; Protobuf 2.6.1-1.3; Tensorflow 1.6)
@@ -28,8 +27,6 @@ To test if Monodepth C++ is working properly,
 cd build
 ./inference_monodepth
 ```
-
-**NOTE:** Select either static or shared library in CMakeLists.txt, unless you want both of them
 
 ## Use (static/shared) library
 In your own CMakeLists.txt project, do the following:
