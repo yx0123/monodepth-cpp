@@ -41,10 +41,10 @@ int main()
 {
   int image_width = 256;
   int image_height = 144;
-  monodepth::MonoDepth m(image_width, image_height, "/home/dh/monodepth-cpp/model/model_city2kitti_vgg.pb"); # modify path
+  monodepth::MonoDepth m(image_width, image_height, "/home/dh/monodepth-cpp/model/model_city2kitti_vgg.pb"); // modify path
   cv::Mat depth;
 
-  std::string img_path = "/home/dh/Documents/AirSim/Recordings/"; # modify path
+  std::string img_path = "/home/dh/Documents/AirSim/Recordings/"; // modify path
 
   int number_of_images = 210;
 
@@ -79,7 +79,7 @@ int main()
     depthmap_visual.copyTo(bottom);
 
 
-    cv::namedWindow("FULL", CV_WINDOW_AUTOSIZE);
+    cv::namedWindow("FULL", cv::WINDOW_AUTOSIZE);
     cv::imshow("FULL", full);
     cv::waitKey(1);
   }
