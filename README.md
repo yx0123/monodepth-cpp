@@ -7,7 +7,8 @@
 ```
 sudo apt-get install build-essential cmake
 ```
-4. Build OpenCV from source using [this guide](https://docs.opencv.org/master/d2/de6/tutorial_py_setup_in_ubuntu.html) 
+4. Build OpenCV from source using [this guide](https://docs.opencv.org/master/d2/de6/tutorial_py_setup_in_ubuntu.html). After cloning the git repository, use `git checkout 3.2.0` before continuing with the installation.
+
 
 
 ## Configure CMake project
