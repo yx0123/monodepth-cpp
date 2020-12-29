@@ -2,12 +2,12 @@
 
 include(FindPackageHandleStandardArgs)
 
-# For tensorflow 1.6 (include)
+# For tensorflow 2.3 (include)
 list(APPEND TensorFlow_INCLUDE_DIR ~/tensorflow/local/include/google/tensorflow) # modify path
 list(APPEND TensorFlow_INCLUDE_DIR ~/tensorflow/bazel-tensorflow/external/nsync/public) # modify path
 list(APPEND TensorFlow_INCLUDE_DIR ~/tensorflow/tensorflow/lite/tools/make/downloads/absl) # modify path
 
-# For tensorflow 1.6 (libs)
+# For tensorflow 2.3 (libs)
 set(TensorFlow_LIBRARIES ~/tensorflow/local/lib/libtensorflow_all.so) # modify path
 
 # set TensorFlow_FOUND

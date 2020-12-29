@@ -3,15 +3,20 @@
 ## Requirements
 1. You are required to build Tensorflow library from source, [see here](https://github.com/yx0123/monodepth-cpp/tree/master/Tensorflow_build_instructions)
 2. Download the pre-trained frozen graph [VGG model](https://drive.google.com/open?id=1yzcndbigENP3kQg6Oioerwvkf_hTotZZ)
+3. Install cmake
+```
+sudo apt-get install build-essential cmake
+```
+4. Build OpenCV from source using [this guide](https://docs.opencv.org/master/d2/de6/tutorial_py_setup_in_ubuntu.html).
+
+
 
 ## Configure CMake project
 Clone this repository
 ```
 git clone https://github.com/yx0123/monodepth-cpp.git
 ```
-Edit the hard-coded paths to include directories and libraries
-  * CMakeLists.txt (local built Eigen library)
-  * CMakeModules.cmake (path to '.so' file and 'include' directories; make sure your program source the library and header files) 
+Edit the hard-coded paths to include directories and libraries in `FindTensorFlow.cmake` (look for lines with `# modify path`).
 
 
 ## Build (static/shared) library
@@ -20,7 +25,7 @@ Edit the hard-coded paths to include directories and libraries
 cd monodepth-cpp
 mkdir build && mkdir install
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=/path/to/monodepth-cpp/install ..
+cmake -DCMAKE_INSTALL_PREFIX=/<PATH>/monodepth-cpp/install ..
 make && make install
 ```
 
