@@ -35,7 +35,11 @@ echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" |
 ```
 Install 
 ```
-sudo apt update && sudo apt install bazel-3.1.0
+sudo apt update && sudo apt install bazel
+```
+The bazel package will always install the latest stable version of Bazel. Install bazel-3.1.0 in addition to the latest one like this:
+```
+sudo apt install bazel-3.1.0
 ```
 
 #### CUDA
